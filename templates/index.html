@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Pradnyesh Chindarkar">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- fonts -->
+
+
+    <!-- STYLESHEET -->
+    <style>
+        @font-face {
+            font-family: Sans;
+            src: url(OpenSans-VariableFont_wdth\,wght.ttf);
+        }
+        
+        @font-face {
+            font-family: Sansi;
+            src: url(OpenSans-Italic-VariableFont_wdth,wght.ttf);
+        }
+        
+        * {
+            font-family: 'Sans', sans-serif;
+            margin: 0;
+        }
+        
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20%;
+            right: 5%;
+        }
+        
+        body {
+            background-image: linear-gradient(45deg, rgba(57, 173, 57, 0.822), rgba(49, 49, 141, 0.87));
+        }
+        
+        .navbar-light .navbar-nav .nav-link {
+            color: rgb(255, 253, 253);
+            font-size: 16px;
+        }
+        
+        .navbar-light .navbar-nav .nav-link:hover {
+            color: rgb(189, 189, 189);
+            transition: font-size 0.1s;
+            font-size: 15.70px;
+        }
+        
+        section #homeSec {
+            margin: 0px 0 0px 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        #homeSec {
+            height: 100%;
+            margin: 10px 0 10px 0;
+        }
+        
+        .bg {
+            position: relative;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+        
+        .home_title {
+            position: absolute;
+            top: 65%;
+            left: 72%;
+            text-align: right;
+        }
+        
+        .stick {
+            position: absolute;
+            border-radius: 100%;
+            height: 50%;
+            width: 50%;
+            margin-top: 30px;
+        }
+        
+        .home_title h3 {
+            color: #a72525;
+            font-weight: 600;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 3em;
+        }
+        
+        .home_title h3+p {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1.2em;
+        }
+        
+        .home_title p {
+            padding: 5px;
+        }
+        
+        .gridCont {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+            column-gap: 5%;
+            padding: 15px;
+        }
+        
+        .gitem {
+            justify-self: right;
+            text-align: right;
+        }
+        
+        .gitem h3,
+        .gitem>p {
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .gitem>p {
+            color: rgb(43, 43, 43);
+        }
+        
+        .anim {
+            animation: float 2s infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(-3px);
+            }
+            50% {
+                transform: translateY(3px);
+            }
+            100% {
+                transform: translateY(-3px);
+            }
+        }
+        
+        .gitem3 figure img {
+            height: 50%;
+            width: 50%;
+        }
+        
+        #servSec {
+            height: 100%;
+            margin: 10px 0 10px 0;
+        }
+        
+        .cardStyle {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-items: center;
+            column-gap: 5%;
+            margin: 10px;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .cardStyle {
+                display: grid;
+                grid-template-columns: auto;
+                grid-template-rows: 1fr 1fr 1fr;
+                justify-items: center;
+                row-gap: 5%;
+                margin: 10px;
+            }
+            .home_title {
+                position: absolute;
+                top: 56%;
+                left: 30%;
+                text-align: right;
+                margin-right: 6px;
+            }
+            .home_title h3 {
+                color: #a72525;
+                font-weight: 600;
+                font-family: 'Roboto Condensed', sans-serif;
+                font-size: 1.9em;
+            }
+            .home_title h3+p {
+                color: white;
+                font-weight: 600;
+                font-family: 'Roboto Condensed', sans-serif;
+                font-size: 1.2em;
+            }
+            .gitem3 figure img {
+                height: 100%;
+                width: 100%;
+            }
+            .form-inline i {
+                display: none;
+            }
+            #servSec {
+                height: 520px;
+                margin: 10px 0 10px 0;
+            }
+        }
+        
+        .cardStyle {
+            padding: 0 8px 0 8px;
+        }
+        
+        .cardShape {
+            background-color: #fdfdfdd8;
+            border-radius: 10px;
+            padding: 2px 5px 2px 5px;
+            width: 18rem;
+        }
+        
+        .cardShape:hover {
+            background-color: #ffffffb0;
+            transition: all 0.2s;
+            color: rgb(43, 43, 43);
+        }
+        
+        .cardCont p {
+            padding: 0 10px 0 10px;
+        }
+        
+        .suppGrid {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            place-items: center;
+        }
+        
+        .prodGrid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            justify-items: center;
+        }
+        
+        .prodSecMob {
+            display: none;
+        }
+        
+        .servSecMob {
+            display: none;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .prodGrid {
+                display: none;
+                grid-template-columns: auto;
+                grid-template-rows: 1fr 1fr 1fr;
+                justify-items: center;
+                row-gap: 5%;
+            }
+            .prodSecMob {
+                display: block;
+            }
+            .cardProd {
+                margin: 0 auto;
+            }
+            .cardShape {
+                margin: 0 auto;
+            }
+            .cardStyle {
+                display: none;
+            }
+            .servSecMob {
+                display: contents;
+            }
+        }
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        
+        @media only screen and (min-width: 600px) {
+            div.cardProd {
+                width: 14rem;
+            }
+            .cardShape {
+                width: 13rem;
+            }
+            .linkTitle {
+                display: none;
+            }
+        }
+        /* Medium devices (landscape tablets, 768px and up) */
+        
+        @media only screen and (min-width: 768px) {
+            div.cardProd {
+                width: 14rem;
+            }
+            .cardShape {
+                width: 13rem;
+            }
+            .linkTitle {
+                display: none;
+            }
+            .form-inline i {
+                display: none;
+            }
+            .sociLink ul li {
+                /* display: inline-block;
+                padding: 7px; */
+                font-size: 0.87em;
+            }
+            .home_title {
+                position: absolute;
+                top: 65%;
+                left: 55%;
+            }
+            .form-inline {
+                flex-flow: row wrap;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        /* Large devices (laptops/desktops, 992px and up) */
+        
+        @media only screen and (min-width: 992px) {
+            .home_title {
+                position: absolute;
+                top: 65%;
+                left: 72%;
+            }
+            .sociLink ul li {
+                font-size: initial;
+            }
+            div.cardShape {
+                width: 18rem;
+            }
+            div.cardProd {
+                width: 18rem;
+            }
+        }
+        /* Extra large devices (large laptops and desktops, 1200px and up) */
+        
+        @media only screen and (min-width: 1200px) {}
+        
+        .cardStyle {
+            padding: 0 8px 0 8px;
+        }
+        
+        .cardProd {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2px 5px 2px 5px;
+            width: 18rem;
+        }
+        
+        .cardProd:hover {
+            background-color: #ffffffda;
+            transition: all 0.2s;
+            color: rgb(43, 43, 43);
+        }
+        
+        .cardContProd p,
+        .capt {
+            padding: 0 12px 0 12px;
+        }
+        
+        .cardContProd p {
+            margin: 1rem 0 0.2rem 0;
+        }
+        
+        .cardContProd .capt {
+            font-size: 1em;
+            margin-top: 0;
+            color: rgb(83, 83, 83);
+        }
+        
+        .prodimg img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .butnCss span {
+            color: whitesmoke;
+            font-size: 1.5rem;
+        }
+        
+        #prodSec {
+            height: 100%;
+            margin: 10px 0 10px 0;
+        }
+        /* contact us */
+        
+        section #Contactus {
+            margin: 0px 0 0px 0;
+        }
+        
+        .butnCss button:hover {
+            background-color: transparent;
+            color: rgb(51, 51, 51);
+            font-weight: 600;
+            border: 2px solid rgb(51, 51, 51);
+        }
+        
+        .btn {
+            border: 2px solid transparent;
+        }
+        
+        footer {
+            background-color: #070a4f7d;
+            color: white;
+            padding: 5px;
+        }
+        
+        .footGrid {
+            display: grid;
+            text-align: center;
+            grid-template-columns: 1fr auto 1fr;
+            grid-template-rows: auto;
+            column-gap: 2%;
+            place-items: center;
+        }
+        
+        .logoName {
+            justify-self: right;
+            cursor: pointer;
+        }
+        
+        .dash {
+            content: " ";
+            height: 35px;
+            width: 2px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.479);
+        }
+        
+        .sociLink ul li {
+            display: inline-block;
+            padding: 7px;
+        }
+        
+        .sociLink ul li:hover {
+            cursor: pointer;
+            color: rgb(122, 208, 211);
+        }
+        
+        .sociLink ul {
+            padding-left: 0px;
+            margin-bottom: 0px;
+        }
+        
+        .sociLink {
+            justify-self: left;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .footGrid {
+                grid-template-columns: auto;
+                grid-template-rows: 0.7fr 0.5fr 0.7fr;
+                row-gap: 0;
+            }
+            .logoName {
+                justify-self: center;
+                cursor: pointer;
+            }
+            .dash {
+                content: " ";
+                height: 2px;
+                width: 20%;
+                margin: 0 auto;
+                background-color: rgba(255, 255, 255, 0.479);
+            }
+            .sociLink ul li {
+                display: inline-block;
+                padding: 2px 2px;
+            }
+            .sociLink {
+                justify-self: center;
+            }
+            .sociLink p {
+                margin-bottom: auto;
+            }
+        }
+        
+        #myBtn {
+            position: fixed;
+            bottom: 20%;
+            right: 5%;
+        }
+        
+        .btnDes {
+            background-color: rgba(255, 255, 255, 0.349);
+            border-color: transparent;
+            color: rgb(31, 31, 31);
+            border-radius: 10px;
+            font-size: 1.2em;
+            opacity: 0.6;
+        }
+        
+        .btnDes:hover {
+            opacity: 0.9;
+            font-size: 1.2em;
+            transition: all 0.2s;
+        }
+        
+        .scl_txt {
+            display: none;
+        }
+    </style>
+    <!-- STYLESHEET -->
+
+    <title>Sky Aural</title>
+</head>
+
+<body>
+
+    <!-- NavSec Start -->
+    <section id="navSec">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#" style="color: rgb(255, 255, 255); font-weight: 600; font-size: large;">Sky Aural</a>
+            <button class="navbar-toggler" type="button" style="border-color: #ffffff;" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- <span class="navbar-light navbar-toggler-icon" style="background-color: #ffffff;"></span> -->
+                    <span class="navbar-toggler-icon">   
+                        <i class="fa fa-bars" style="color:#fff; font-size:28px;"></i>
+                    </span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item  mx-auto">
+                        <a class="nav-link" href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li class="nav-item  mx-auto">
+                        <a class="nav-link" href="#aboutSec">About</a>
+                    </li>
+                    <li class="nav-item  mx-auto">
+                        <a class="nav-link" href="#servSec">Services</a>
+                    </li>
+                    <li class="nav-item  mx-auto">
+                        <a class="nav-link" href="#prodSec">Products</a>
+                    </li>
+                    <li class="nav-item  mx-auto">
+                        <a class="nav-link" href="#contactUs">Contact Us</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <i class="fa fa-search" aria-hidden="true" style="padding: 0 8px 0 8px; font-size: 24px; color: rgb(200, 200, 200);"></i>
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+            </div>
+        </nav>
+    </section>
+    <!-- navSec End -->
+
+
+    <!-- homeSec Start -->
+    <section id="homeSec">
+        <div class="container">
+            <div class="home">
+                <div class="row">
+                    <div class="title col-sm position-relative">
+                        <div>
+                            <video width="100%" height="100%" loop autoplay muted>
+                                    <source src="/static/images/Alpha.mp4" type="video/mp4">
+                                </video>
+                        </div>
+                        <div class="home_title">
+                            <h3>Headset.</h3>
+                            <p>Let Your Soul Hear The Melody.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- homeSec End -->
+
+    <section id="aboutSec" style="margin: 10% 0 10px 0;background-color: #ffffff67;">
+        <div class="gridCont">
+            <div class="gitem">
+                <h3 style="font-weight: 600;">About Us</h3>
+                <hr>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nulla sequi neque! Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores sapiente dolore eveniet.
+                    <div class="line"> </div>
+                </p>
+            </div>
+
+            <div class="gitem3 anim">
+                <figure>
+                    <img src="/static/images/about-us-1-1536x1536.png">
+                </figure>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Services sect -->
+    <section id="servSec">
+        <div class="">
+            <h3 class="mx-auto text-center" style="color: whitesmoke; font-weight: 400;">Our Services</h3>
+            <hr class="mx-auto w-25" style="background-color: whitesmoke;">
+        </div>
+        <div class="cardStyle">
+            <div class="cardItem">
+                <div class="cardShape">
+                    <div class="cardTitle">
+                        <h3 class="text-center"><i class="fa fa-star" aria-hidden="true" style="color: rgb(224, 191, 0);"></i></h3>
+                        <hr class="w-50 mx-auto">
+                    </div>
+                    <div class="cardCont">
+                        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ipsum voluptates animi ab provident alias tempora dolorem vitae voluptatum a, repudiandae, natus dicta doloremque tempore laboriosam iste deleniti? Hic, quisquam. Lorem
+                            ipsum dolor sit amet consectetur, adipisicing elit. Corporis explicabo nulla harum dignissimos consectetur perspiciatis sed illum optio fugit nemo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cardItem">
+                <div class="cardShape">
+                    <div class="cardTitle">
+                        <h3 class="text-center"><i class="fa fa-star" aria-hidden="true" style="color: rgb(224, 191, 0);"></i></h3>
+                        <hr class="w-50 mx-auto">
+
+                    </div>
+                    <div class="cardCont">
+                        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ipsum voluptates animi ab provident alias tempora dolorem vitae voluptatum a, repudiandae, natus dicta doloremque tempore laboriosam iste deleniti? Hic, quisquam. Lorem
+                            ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, modi!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cardItem">
+                <div class="cardShape">
+                    <div class="cardTitle">
+                        <h3 class="text-center"><i class="fa fa-star" aria-hidden="true" style="color: rgb(224, 191, 0);"></i></h3>
+                        <hr class="w-50 mx-auto">
+
+                    </div>
+                    <div class="cardCont">
+                        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ipsum voluptates animi ab provident alias tempora dolorem vitae voluptatum a, repudiandae, natus dicta doloremque tempore laboriosam iste deleniti? Hic, quisquam.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile viewport -->
+        <div class="servSecMob">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000" data-pause="hover" data-keyboard="true">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="cardItem d-block">
+                            <div class="cardShape">
+                                <div class="cardTitle">
+                                    <h3 class="text-center"><i class="fa fa-star" aria-hidden="true" style="color: rgb(224, 191, 0);"></i></h3>
+                                    <hr class="w-50 mx-auto">
+                                </div>
+                                <div class="cardCont">
+                                    <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ipsum voluptates animi ab provident alias tempora dolorem vitae voluptatum a, repudiandae, natus dicta doloremque tempore laboriosam iste deleniti? Hic,
+                                        quisquam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis explicabo nulla harum dignissimos consectetur perspiciatis sed illum optio fugit nemo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="cardItem">
+                            <div class="cardShape">
+                                <div class="cardTitle">
+                                    <h3 class="text-center"><i class="fa fa-star" aria-hidden="true" style="color: rgb(224, 191, 0);"></i></h3>
+                                    <hr class="w-50 mx-auto">
+
+                                </div>
+                                <div class="cardCont">
+                                    <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ipsum voluptates animi ab provident alias tempora dolorem vitae voluptatum a, repudiandae, natus dicta doloremque tempore laboriosam iste deleniti? Hic,
+                                        quisquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, modi!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="cardItem">
+                            <div class="cardShape">
+                                <div class="cardTitle">
+                                    <h3 class="text-center"><i class="fa fa-star" aria-hidden="true" style="color: rgb(224, 191, 0);"></i></h3>
+                                    <hr class="w-50 mx-auto">
+
+                                </div>
+                                <div class="cardCont">
+                                    <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ipsum voluptates animi ab provident alias tempora dolorem vitae voluptatum a, repudiandae, natus dicta doloremque tempore laboriosam iste deleniti? Hic,
+                                        quisquam.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services sect -->
+
+
+    <!-- Support -->
+    <section id="prodSec">
+        <div>
+            <h3 class="mx-auto text-center" style="color: whitesmoke; font-weight: 400;">Our Store</h3>
+            <hr class="mx-auto w-25" style="background-color: whitesmoke;">
+        </div>
+        <div class="prodGrid">
+            <div class="cardItem">
+                <div class="cardProd">
+                    <div class="cardTitle">
+                        <figure class="prodimg">
+                            <img src="/static/images/prod1.png">
+                        </figure>
+                        <h3 class="text-center"></h3>
+                        <hr class="w-25 mx-auto">
+                    </div>
+                    <div class="cardContProd">
+                        <p class="text-left"><i class="fa fa-inr" aria-hidden="true"></i> 1,000/-</p>
+                        <p class="text-left">Boat Bluetooth Earpods.</p>
+                        <p class="capt">Get ready to experience a vibe of freshness.</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardItem">
+                <div class="cardProd">
+                    <div class="cardTitle">
+                        <figure class="prodimg">
+                            <img src="/static/images/prod1.png">
+                        </figure>
+                        <h3 class="text-center"></h3>
+                        <hr class="w-25 mx-auto">
+
+                    </div>
+                    <div class="cardContProd">
+                        <p class="text-left"><i class="fa fa-inr" aria-hidden="true"></i> 1,000/-</p>
+                        <p class="text-left">Boat Bluetooth Earpods.</p>
+                        <p class="capt">Get ready to experience a vibe of freshness.</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardItem">
+                <div class="cardProd">
+                    <div class="cardTitle">
+                        <figure class="prodimg">
+                            <img src="/static/images/prod1.png">
+                        </figure>
+                        <h3 class="text-center"></h3>
+                        <hr class="w-25 mx-auto">
+                    </div>
+                    <div class="cardContProd">
+                        <p class="text-left"><i class="fa fa-inr" aria-hidden="true"></i> 1,000/-</p>
+                        <p class="text-left">Boat Bluetooth Earpods.</p>
+                        <p class="capt">Get ready to experience a vibe of freshness.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="carouselExampleControls" class="carousel slide" data-ride="false">
+            <div class="prodSecMob">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="cardItem">
+                            <div class="cardProd">
+                                <div class="cardTitle">
+                                    <figure class="prodimg">
+                                        <img src="/static/images/prod1.png">
+                                    </figure>
+                                    <h3 class="text-center"></h3>
+                                    <hr class="w-25 mx-auto">
+                                </div>
+                                <div class="cardContProd">
+                                    <p class="text-left"><i class="fa fa-inr" aria-hidden="true"></i> 1,000/-</p>
+                                    <p class="text-left">Boat Bluetooth Earpods.</p>
+                                    <p class="capt">Get ready to experience a vibe of freshness.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="cardItem">
+                            <div class="cardProd">
+                                <div class="cardTitle">
+                                    <figure class="prodimg">
+                                        <img src="/static/images/prod1.png">
+                                    </figure>
+                                    <h3 class="text-center"></h3>
+                                    <hr class="w-25 mx-auto">
+                                </div>
+                                <div class="cardContProd">
+                                    <p class="text-left"><i class="fa fa-inr" aria-hidden="true"></i> 1,000/-</p>
+                                    <p class="text-left">Boat Bluetooth Earpods.</p>
+                                    <p class="capt">Get ready to experience a vibe of freshness.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="cardItem">
+                            <div class="cardProd">
+                                <div class="cardTitle">
+                                    <figure class="prodimg">
+                                        <img src="/static/images/prod1.png">
+                                    </figure>
+                                    <h3 class="text-center"></h3>
+                                    <hr class="w-25 mx-auto">
+                                </div>
+                                <div class="cardContProd">
+                                    <p class="text-left"><i class="fa fa-inr" aria-hidden="true"></i> 1,000/-</p>
+                                    <p class="text-left">Boat Bluetooth Earpods.</p>
+                                    <p class="capt">Get ready to experience a vibe of freshness.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Support -->
+
+    <!-- Contact Us -->
+    <section class="mb-4" id="contactUs" style="margin: 10% 0 10px 0;background-color: #ffffff67;">
+        <!--Section heading-->
+        <div class="container contact-form p-3">
+            <form method="post">
+                <div>
+                    <h3 class="text-center">Contact Us</h3>
+                    <hr class="mx-auto w-25" style="background-color: rgb(36, 36, 36);;">
+                </div>
+                <div>
+                    <p class="text-center w-responsive mx-auto" style="color: rgb(36, 36, 36);">If you have any queries please feel free to contact us by filling the form given below.
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="txtName" class="form-control" placeholder="Your Name *" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center" class="butnCss m-2">
+                    <button type="submit" class="btn btn-submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- Contact Us -->
+
+    <!-- footer -->
+    <Footer>
+        <div class="footGrid">
+            <div class="logoName">
+                Sky Aural
+            </div>
+            <div class="dash">
+            </div>
+            <div class="sociLink">
+                <p class="linkTitle">Our Social Media Links:</p>
+                <ul>
+                    <li><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</li>
+                    <li><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</li>
+                    <li><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</li>
+                    <li><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</li>
+                </ul>
+            </div>
+        </div>
+    </Footer>
+    <div class="butnScr">
+        <button id="myBtn" class="btnDes" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i>
+            <span onclick="topFunction()" class="scl_txt"> Back to top</span></div></button>
+    </div>
+    <!-- footer -->
+
+
+
+
+    <script>
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 90) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        /////-------------------------------
+    </script>
+    <script>
+        // $(".fa-arrow-left").click(function() {
+        //     $("").toggle();
+        // });
+        $(document).ready(function() {
+            $(".butnScr").click(function() {
+                $(".scl_txt").toggle(1000);
+                // $("div.scl_txt").animate({
+                //     display: "contents"
+                // }, "slow");
+            });
+            $(".btnDes").focusout(function() {
+                $(this).css("font-size", "1.4em");
+                $(".scl_txt").toggle(4000);
+            });
+            $(".scl_txt").click(function() {
+                $(this).hide();
+            })
+        });
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
