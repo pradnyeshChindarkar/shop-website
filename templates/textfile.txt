@@ -1,0 +1,17 @@
+{
+code first
+}
+------------
+commit 2
+{
+code
+code
+code
+}
+-----
+new line addded
+{
+code
+}
+and now going to commit direcly skipping staging area
+------------
